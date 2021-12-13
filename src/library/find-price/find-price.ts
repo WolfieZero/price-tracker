@@ -10,9 +10,11 @@ export interface FoundPrice {
 
 export const findPrice = async (url: string): Promise<FoundPrice> => {
   const patterns = [
-    { name: 'amazon', includes: 'amazon.co.uk', func: stores.amazon },
-    { name: 'shopto', includes: 'shopto.net', func: stores.shopto },
-    { name: 'gamecollection', includes: 'thegamecollection.net', func: stores.gamecollection },
+    { name: 'Amazon UK', includes: 'amazon.co.uk', func: stores.amazon },
+    { name: 'AO', includes: 'ao.com', func: stores.ao },
+    { name: 'Currys', includes: 'currys.co.uk', func: stores.currys },
+    { name: 'The Game Collection', includes: 'thegamecollection.net', func: stores.gamecollection },
+    { name: 'ShopTo', includes: 'shopto.net', func: stores.shopto },
   ];
 
   let name: string = '';

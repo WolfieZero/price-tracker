@@ -4,8 +4,10 @@ export const convertPriceDown = (value: string | number) => {
   }
   const removedCurrencySymbol = /(\d.*)/.exec(value) || [];
   value = removedCurrencySymbol[removedCurrencySymbol.length - 1];
-  value = parseInt(value.replace('.', ''));
-  return value;
+  if (value.includes('.')) {
+    return parseInt(parseFloat(value).toFixed(2).replace('.', ''));
+  }
+  return parseInt(value.replace('.', ''));
 };
 
 export const convertPriceUp = (value: number): string => {
